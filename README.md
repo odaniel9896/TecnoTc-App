@@ -1,1 +1,0 @@
-# TecnoTc-app
