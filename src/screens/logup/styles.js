@@ -3,6 +3,7 @@ import colors from "../../styles/colors";
 import { TextDefault } from "../../styles/stylesGlobal";
 
 export const Content = styled.View`
+    padding-top: 20px;
     width: 100%;
     align-items: center;
     justify-content: center;

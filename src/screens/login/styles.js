@@ -3,27 +3,40 @@ import colors from "../../styles/colors";
 import { TextDefault } from "../../styles/stylesGlobal";
 
 export const Content = styled.View`
-    height: 75%;
+    height: 52%;
     width: 100%;
     margin-top: auto;
-    padding-top: 90px;
+    padding-top: 50px;
     background-color: ${colors.white};
-    border-top-left-radius: 180px;
-    border-top-right-radius: 180px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
     align-items: center;
+`;
+
+export const TextLogin = styled.View`
+    height: 30%;
+    width: 100%;
 `;
 
 export const TitleLogin = styled.Text`
     font-size: 30px;
-    color: ${colors.darkPurple};
+    color: ${colors.white};
     font-weight: bold;
+    margin-top: 30px;
 `;
 
 export const SubtitleLogin = styled.Text`
     font-size: 18px;
-    color: ${colors.darkGray};
+    color: ${colors.white};
     font-weight: bold;
-    margin-bottom: 50px;
+`;
+
+export const ImageLogin = styled.Image`
+    width: 48%;
+    height: 48%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
 `;
 
 export const Label = styled(TextDefault)`
@@ -51,7 +64,7 @@ export const Span = styled.Text`
     align-self: flex-end;
     color: ${colors.black};
     left: -15px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 `;
 
 export const CreateAccount = styled.Text`

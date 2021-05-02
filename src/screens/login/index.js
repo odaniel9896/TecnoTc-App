@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { StatusBar, Alert, TouchableOpacity} from "react-native";
+import { StatusBar, Alert, TouchableOpacity, ScrollView} from "react-native";
 import ButtonPurple from "../../components/buttonPurple";
 import colors from "../../styles/colors";
 import { Container, TextToolBar, ToolBar, EditTextLightGreen } from "../../styles/stylesGlobal";
-import { Content, TextInputLogin, Label, TitleLogin, SubtitleLogin, Span, CreateAccount} from "./styles";
+import { Content, TextInputLogin, Label, TitleLogin, SubtitleLogin, Span, CreateAccount, ImageLogin} from "./styles";
+import imgLogin from "../../../assets/login.gif";
 import { api } from "../../services/api";
 import { signIn } from "../../services/security";
+
 
 function Login({navigation}) {
 
@@ -46,9 +48,10 @@ function Login({navigation}) {
 
     return (
         <Container>
+            <TitleLogin> Nós somos <EditTextLightGreen> TecnoTc! </EditTextLightGreen> </TitleLogin>
+            <SubtitleLogin> Seja bem vindo(a) de volta! </SubtitleLogin>
+            <ImageLogin source={imgLogin}/>
             <Content>
-                <TitleLogin> Nós somos <EditTextLightGreen> TecnoTc! </EditTextLightGreen> </TitleLogin>
-                <SubtitleLogin> Seja bem vindo(a) de volta! </SubtitleLogin>
                 <Label> E-mail </Label>
                 <TextInputLogin
                     keyboardType="email-address"
@@ -79,7 +82,6 @@ function Login({navigation}) {
                 <TouchableOpacity>
                     <CreateAccount> Não tem uma conta? <EditTextLightGreen onPress={handleReturnRegister}>Cadastre-se agora!</EditTextLightGreen> </CreateAccount>
                 </TouchableOpacity>
-               
             </Content>
         </Container>
     )

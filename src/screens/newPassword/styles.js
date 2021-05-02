@@ -1,19 +1,21 @@
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
 import { TextDefault } from "../../styles/stylesGlobal";
+import { Dimensions } from "react-native";
 
 export const Content = styled.View`
     width: 100%;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    margin-bottom: 20px;
 `;
 
 export const TitleNewPassword = styled.Text`
     font-weight: bold;
     color: ${colors.white};
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 `;
 
 export const ImageNewPassword = styled.Image`
@@ -25,7 +27,7 @@ export const TextNewPassword = styled.Text`
     color: ${colors.white};
     font-size: 20px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 `;
 
