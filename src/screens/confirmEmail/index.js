@@ -12,6 +12,10 @@ import {
 import ImgConfirmEmail from "../../../assets/ImageconfirmEmail.png"
   
   function ConfirmEmail({navigation}) {
+
+    const handleBackLogin = (e) => {
+      navigation.navigate("Login")
+    }
     return (
         <Container>
           <Header>
@@ -23,9 +27,8 @@ import ImgConfirmEmail from "../../../assets/ImageconfirmEmail.png"
             <EmailConfirm>O seu email foi confirmado!</EmailConfirm>
             <EmailConfirm>Aproveite as ferramentas feitas especialmente para você!</EmailConfirm>
   
-            <ButtonConfirm> 
-              <TextButtonConfirm> Ir para a página principal! </TextButtonConfirm>
-               
+            <ButtonConfirm onPress={handleBackLogin}> 
+              <TextButtonConfirm> Ir para a página principal! </TextButtonConfirm>               
             </ButtonConfirm>
           </Mensagem>
         </Container>

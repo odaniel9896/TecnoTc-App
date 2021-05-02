@@ -2,6 +2,8 @@ import { StatusBar } from "react-native";
 import { color } from "react-native-reanimated";
 import styled from "styled-components/native";
 import colors from "../../../styles/colors";
+import Icon from "react-native-vector-icons/FontAwesome";
+
 
 //styles groups
 
@@ -112,6 +114,20 @@ export const TitleUserProfile = styled.Text`
     font-size: 20px;
     margin-bottom: 10px;
 `;
+export const PerfilLogout = styled.View`
+    display: flex;
+    width: 100%;
+    margin-left: 100px;
+    justify-content: space-evenly;
+    flex-direction: row;
+`;
+
+export const IconSignOut = styled(Icon)`
+	font-size: 24px;
+	color: white;
+	right: 4px;
+`;
+
 
 export const ImageProfile = styled.View`
     width: 120px;

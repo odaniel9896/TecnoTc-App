@@ -44,7 +44,7 @@ function Logup({ navigation }) {
           const response = await api.post('/students', userRegister);
           
           
-          navigation.navigate("Login");
+          navigation.navigate("OrderConfirmEmail");
         } catch (error) {
           console.error(error);
           alert(error.response.data.error);

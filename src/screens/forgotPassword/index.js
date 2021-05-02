@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar} from "react-native";
 import colors from "../../styles/colors";
 import { Container } from "../../styles/stylesGlobal";
 import {Content, TitleForgotPassword, ImageForgotPassword, TextForgotPassword, Label, TextInputForgotPassword} from "./styles";
 import ImgForgotPassword from "../../../assets/esqueceuSenha.gif";
 import ButtonLightGreen from "../../components/buttonLightGreen";
+import { api } from "../../services/api";
 
-function ForgotPassword() {
+function ForgotPassword({navigation}) {
 
     StatusBar.setBackgroundColor(colors.darkPurple);
+
+    const [forgotEmail, setForgotEmail] = useState({
+        email: "",
+    });
+
+    const handleEmail = (e) => {
+        setForgotEmail({ ...forgotEmail, email: e });
+    };
+
+    const handleSubmit = async () => {
+        try {
+            const response = await api.get(`/emailpassword/${forgotEmail.email}`);
+            console.log(api.get)
+
+            console.log("Email de recuperação enviado");
+
+            navigation.navigate("OrderConfirmEmail")
+
+        } catch (error) {
+            console.error(error);
+            alert(error.response.data.error);
+        }
+    }
 
     return(
         <Container>
@@ -26,8 +50,9 @@ function ForgotPassword() {
                     returnKeyType="next"
                     maxLength={30}
                     placeholder="Digite aqui seu e-mail"
+                    onChangeText={handleEmail}
                     placeholderTextColor={colors.lightGrey}/>
-                <ButtonLightGreen text="Enviar link de recuperação"/>
+                <ButtonLightGreen text="Enviar link de recuperação" handlePress={handleSubmit}/>
             </Content>
         </Container>
     );
