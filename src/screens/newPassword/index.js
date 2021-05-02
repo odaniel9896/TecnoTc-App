@@ -6,8 +6,10 @@ import { Container } from "../../styles/stylesGlobal";
 import { Content, TitleNewPassword, ImageNewPassword, TextNewPassword, TextInputNewPassword, Label } from "./styles";
 import ImgNewPassword from "../../../assets/novaSenha.gif";
 import { api } from "../../services/api";
+import * as Linking from 'expo-linking';
 
-function NewPassword() {
+
+function NewPassword({navigation}) {
 
     StatusBar.setBackgroundColor(colors.darkPurple);
 
@@ -64,7 +66,7 @@ function NewPassword() {
                         placeholder="Confirme aqui sua nova senha"
                         onChangeText={handleRepeatpassword}
                         placeholderTextColor={colors.lightGrey} />
-                    <ButtonLightGreen text="Redefinir Senha" onPress={handleSubmitPassword}/>
+                    <ButtonLightGreen text="Redefinir Senha" onPress={handleSubmitPassword} />
                 </Content>
             </ScrollView>
         </Container>
